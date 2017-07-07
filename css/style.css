@@ -1,0 +1,84 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.42857143;
+    color: #333;
+	text-align: justify;
+	position:relative;
+}
+img{
+    display:block;
+    margin:auto;
+}
+#logo {
+    height: 2rem;
+}
+
+#hello-text{
+	color: #53768A;
+	text-align: center;
+}
+
+#me{
+	width: 25rem;
+	border-radius:5%;
+}
+
+#contact-logos img{
+	width:4rem;
+	padding-bottom:4rem;
+}
+.list-group-item {
+    padding-top: 0.4rem;
+}
+.black{
+    background-color: #333;
+    color:white;
+}
+footer{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: #efefef;
+	text-align: center;	
+}
+
+@media(max-width: 992px) {
+	#me{
+		width: 20rem;
+	}
+}
+
+@media(max-width: 768px) {
+	#me{
+		width: 15rem;
+	}
+}
+
+@media(max-width: 576px) {
+	#me{
+		width: 10rem;
+	}
+	.container{
+	padding-top:4.5rem;
+}
+}
+
+.fp-controlArrow.fp-prev {
+    left: 15px;
+    width: 0;
+    border-width: 38.5px 34px 38.5px 0;
+	border-color: transparent rgba(41,42,43,0.1) transparent transparent;
+}
+.fp-controlArrow.fp-prev:hover {
+	border-color: transparent #292a2b transparent transparent;
+}
+.fp-controlArrow.fp-next {
+    right: 15px;
+    border-width: 38.5px 0 38.5px 34px;
+    border-color: transparent transparent transparent rgba(41,42,43,0.1);
+}
+.fp-controlArrow.fp-next:hover {
+	border-color: transparent transparent transparent #292a2b;
+}
