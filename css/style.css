@@ -1,9 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.42857143;
     color: #333;
-	text-align: justify;
-	position:relative;
+    position:relative;
 }
 img{
     display:block;
@@ -12,17 +10,14 @@ img{
 #logo {
     height: 2rem;
 }
-
 #hello-text{
 	color: #53768A;
 	text-align: center;
 }
-
 #me{
 	width: 25rem;
 	border-radius:5%;
 }
-
 #contact-logos img{
 	width:4rem;
 	padding-bottom:4rem;
@@ -43,28 +38,34 @@ footer{
 	background-color: #efefef;
 	text-align: center;	
 }
-
 @media(max-width: 992px) {
 	#me{
 		width: 20rem;
 	}
+	.work-in-progress{
+		width: 25rem;	
+	}
 }
-
 @media(max-width: 768px) {
 	#me{
 		width: 15rem;
 	}
+	.work-in-progress{
+		width: 20rem;	
+	}
 }
-
 @media(max-width: 576px) {
 	#me{
 		width: 10rem;
 	}
-	.container{
-	padding-top:4.5rem;
-}
-}
+	.work-in-progress{
+		width: 15rem;	
+	}
 
+}
+#little-space-here{
+	padding-top: 1rem;
+}
 .fp-controlArrow.fp-prev {
     left: 15px;
     width: 0;
