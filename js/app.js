@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$('#fullpage').fullpage({
 		anchors: ['hello','intro', 'skills', 'works', 'about', 'contact'],
-		sectionsColor: ['#f0f0f5', '#e3e3e8', '#f0f0f5', '#e3e3e8', '#f0f0f5', '#e3e3e8'],
+		sectionsColor: ['#fff', '#fefefe', '#fff', '#fefefe', '#fff', '#fefefe'],
 		menu: '#menu',
 		css3: true,
 		autoScrolling: false,
