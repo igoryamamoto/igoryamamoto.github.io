@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Slab');
 body {
     position:relative;
 }
@@ -9,16 +10,21 @@ img {
     height: 2rem;
 }
 p {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Slab', serif;
   color: #333;
+  font-weight:400;
+  font-size: 1.5em;
 }
 h1,
 h2,
 h3 {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
 
+h1 {
+  font-size: 5em;
+} 
 .navbar {
   background-color: rgba(255, 255, 255, 0.8);
 }
@@ -97,6 +103,12 @@ footer{
 	.work-in-progress{
 		width: 25rem;
 	}
+	h1{
+	  font-size: 4em;
+	}
+	p{
+	  font-size: 1.25em;
+	}
 }
 @media(max-width: 768px) {
 	#me{
@@ -104,6 +116,12 @@ footer{
 	}
 	.work-in-progress{
 		width: 20rem;
+	}
+	h1{
+	  font-size: 3em;
+	}
+	p{
+	  font-size: 1.2em;
 	}
 }
 @media(max-width: 576px) {
@@ -116,6 +134,12 @@ footer{
   .active.nav-item > a:before {
     width: 20%;
   }
+  h1{
+	  font-size: 2em;
+	}
+  p{
+	  font-size: 1em;
+	}
 
 }
 #little-space-here{
@@ -128,7 +152,7 @@ footer{
 	border-color: transparent rgba(41,42,43,0.1) transparent transparent;
 }
 .fp-controlArrow.fp-prev:hover {
-	border-color: transparent #292a2b transparent transparent;
+	border-color: transparent #00c46d transparent transparent;
 }
 .fp-controlArrow.fp-next {
     right: 15px;
@@ -136,5 +160,5 @@ footer{
     border-color: transparent transparent transparent rgba(41,42,43,0.1);
 }
 .fp-controlArrow.fp-next:hover {
-	border-color: transparent transparent transparent #292a2b;
+	border-color: transparent transparent transparent #00c46d;
 }
