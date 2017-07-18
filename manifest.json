@@ -1,21 +1,21 @@
 {
   "short_name": "Ígor Yamamoto",
   "name": "Ígor Yamamoto",
-  "start_url": "static",
+  "start_url": "/",
   "icons": [
     {
-      "src": "/static/img/letter-i-128.png",
+      "src": "./img/letter-i-128.png",
       "sizes": "128x128",
       "type": "image/png"
     },
     {
-      "src": "/static/img/letter-i-256.png",
+      "src": "./img/letter-i-256.png",
       "sizes": "256x256",
       "type": "image/png"
     }
   ],
-  "background_color": "#F0F0F5",
-  "theme_color": "#303030",
+  "background_color": "#fff",
+  "theme_color": "#00c46d",
   "display": "standalone",
   "orientation": "portrait"
 }
