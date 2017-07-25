@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#hello-sec').addClass('fadeInDown animated');
+    //$('#hello-sec').addClass('fadeInDown animated');
 	$('#fullpage').fullpage({
 		anchors: ['hello','intro', 'skills', 'works', 'about', 'contact'],
 		sectionsColor: ['#fff', '#fefefe', '#fff', '#fefefe', '#fff', '#fefefe'],
