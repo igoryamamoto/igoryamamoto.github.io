@@ -19,6 +19,7 @@
 	  <link rel="stylesheet" href="./css/animate.min.css"/>
 	  <!-- My CSS -->
 	  <link href="./css/style.css" rel="stylesheet"/>
+    <script src="js/modernizr.js"></script>
   </head>
 
   <body>
@@ -36,8 +37,8 @@
 		        <li data-menuanchor="hello" class="nav-item">
 					    <a class="nav-link active" href="#hello"> HELLO </a>
 				    </li>
-				    <li data-menuanchor="intro" class="nav-item">
-					    <a class="nav-link" href="#intro"> INTRO </a>
+				    <li data-menuanchor="exp" class="nav-item">
+					    <a class="nav-link" href="#exp"> EXPERIENCE </a>
 				    </li>
 				    <li data-menuanchor="skills" class="nav-item">
 					    <a class="nav-link" href="#skills"> SKILLS </a>
@@ -73,15 +74,98 @@
 		      </div>
 	      </div>
       </section>
-<!-----------------------INTRO--------------------------------------------->
-      <section id="intro-sec">
-	      <div class="container">
-		      <h1 class="align-items-start"> Intro </h1>
-          <br/>
-		      <p>I'm a <a href="http://automacao.ufsc.br/">Systems and Control Engineering</a> student at <a href="https://ufsc.br">UFSC</a> since 2014.  I love learning and teaching, I have interest in technologies of all kinds and I am always opened to new ones.</p>
-		      <p>My main interests are in process control, mathematical optmization, computer science, software and web development.</p>
-		      <p>I have experience as teaching assistant and as undergraduate researcher. Currently I am working as python developer, creating algorithms and different strategies of Model Predictive Control implementation.</p>
-	      </div>
+<!-----------------------EXP--------------------------------------------->
+      <section id="exp-sec">
+        <div class="container">
+          <h1> Experience </h1>
+          <div id="cd-timeline">
+
+             <div class="cd-timeline-block">
+         			<div class="cd-timeline-img bg-born">
+         				<img src="img/baby-32.png" alt="Born">
+         			</div> <!-- cd-timeline-img -->
+         			<div class="cd-timeline-content">
+         				<h2>Born</h2>
+                <p> Belo Horizonte, MG, Brasil </p>
+         				<span class="cd-date">1996</span>
+         			</div> <!-- cd-timeline-content -->
+         		</div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+        			<div class="cd-timeline-img bg-ufsc">
+        				<img src="img/book-stack-32.png" alt="UFSC">
+        			</div> <!-- cd-timeline-img -->
+        			<div class="cd-timeline-content">
+        				<h2>Started College at UFSC</h2>
+        				<p><a href="http://automacao.ufsc.br/" target="_blank">Systems and Control Engineering</a> program at <a href="https://ufsc.br" target="_blank">UFSC</a></p>
+        				<!--a href="#0" class="cd-read-more">Read more</a-->
+        				<span class="cd-date">2014</span>
+        			</div> <!-- cd-timeline-content -->
+        		</div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+        			<div class="cd-timeline-img bg-ta">
+        				<img src="img/pi-sign-32.png" alt="MIT">
+        			</div> <!-- cd-timeline-img -->
+        			<div class="cd-timeline-content">
+        				<h2>MIT - Matemática Inteligente</h2>
+        				<p>Matemática Inteligente is a mathematics specialized course for students in college preparatory courses or high school students.</p>
+        				<!--a href="#0" class="cd-read-more">Read more</a-->
+        				<span class="cd-date">2014</span>
+        			</div> <!-- cd-timeline-content -->
+        		</div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+        			<div class="cd-timeline-img bg-ufsc">
+        				<img src="img/research-32.png" alt="Research">
+        			</div> <!-- cd-timeline-img -->
+        			<div class="cd-timeline-content">
+        				<h2>Undergraduate Researcher</h2>
+        				<p>Young Talents for Science Program - CAPES</p>
+                <p>Development of high-level programming routines integrated with LabVIEW for FPGA's programming and configuration, under professor Rodolfo César Costa Flesch advising.</p>
+        				<!--a href="#0" class="cd-read-more">Read more</a-->
+        				<span class="cd-date">2015</span>
+        			</div> <!-- cd-timeline-content -->
+        		</div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+        			<div class="cd-timeline-img bg-ta">
+        				<img src="img/student-32.png" alt="Teacher">
+        			</div> <!-- cd-timeline-img -->
+        			<div class="cd-timeline-content">
+        				<h2>Teaching Assistant</h2>
+        				<p>Numerical Methods Course</p>
+        				<!--a href="#0" class="cd-read-more">Read more</a-->
+        				<span class="cd-date">2016</span>
+        			</div> <!-- cd-timeline-content -->
+        		</div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+        			<div class="cd-timeline-img bg-ufsc">
+        				<img src="img/research-32.png" alt="Research">
+        			</div> <!-- cd-timeline-img -->
+        			<div class="cd-timeline-content">
+        				<h2>Undergraduate Researcher</h2>
+        				<p>Implementation and simulation of Model Predictive Control (advanced control technique) algorithms with Python.</p>
+        				<!--a href="#0" class="cd-read-more">Read more</a-->
+        				<span class="cd-date">2017</span>
+        			</div> <!-- cd-timeline-content -->
+        		</div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+        			<div class="cd-timeline-img bg-code">
+        				<img src="img/code-32.png" alt="C:N">
+        			</div> <!-- cd-timeline-img -->
+        			<div class="cd-timeline-content">
+        				<h2>Graduated at Code:Nation</h2>
+        				<p><a href='http://codenation.com.br' target="_blank">Code:Nation</a></p>
+        				<!--a href="#0" class="cd-read-more">Read more</a-->
+        				<span class="cd-date">2017</span>
+        			</div> <!-- cd-timeline-content -->
+        		</div> <!-- cd-timeline-block -->
+
+           </div>
+        </div>
       </section>
 <!------------------------SKILLS-------------------------------------------->
 	    <section id="skills-sec">
@@ -152,10 +236,13 @@
 	    </section>
 <!---------------------------ABOUT----------------------------------------->
 	    <section id="about-sec">
-		    <div class="container">
-			    <h1> About </h1>
+        <div class="container">
+		      <h1> About </h1>
           <br/>
-			    <p> I like hiking and sushi.</p>
+		      <p>I'm a <a href="http://automacao.ufsc.br/">Systems and Control Engineering</a> student at <a href="https://ufsc.br">UFSC</a> since 2014.  I love learning and teaching, I have interest in technologies of all kinds and I am always opened to new ones.</p>
+		      <p>My main interests are in process control, mathematical optmization, computer science, software and web development.</p>
+		      <p>I have experience as teaching assistant and as undergraduate researcher. Currently I am working as python developer, creating algorithms and different strategies of Model Predictive Control implementation.</p>
+			    <p>I like hiking and sushi.</p>
 		    </div>
 	    </section>
 <!---------------------------CONTACT----------------------------------------->
@@ -192,7 +279,7 @@
 		<footer>
 		    <p>&copy; Ígor Yamamoto 2017</p>
 		</footer>
-    
+
 		<!-- Bootstrap core JavaScript -->
 		<!-- fullPage.js só funciona com jQuery antigo -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

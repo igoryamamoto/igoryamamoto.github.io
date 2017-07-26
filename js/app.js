@@ -1,8 +1,35 @@
 $(document).ready(function() {
-    //$('#hello-sec').addClass('fadeInDown animated');
+  var timelineBlocks = $('.cd-timeline-block'),
+		offset = 0.8;
+
+	//hide timeline blocks which are outside the viewport
+	hideBlocks(timelineBlocks, offset);
+
+	//on scolling, show/animate timeline blocks when enter the viewport
+	$(window).on('scroll', function(){
+		(!window.requestAnimationFrame)
+			? setTimeout(function(){ showBlocks(timelineBlocks, offset); }, 100)
+			: window.requestAnimationFrame(function(){ showBlocks(timelineBlocks, offset); });
+	});
+
+	function hideBlocks(blocks, offset) {
+    console.log('hideou');
+		blocks.each(function(){
+			( $(this).offset().top > $(window).scrollTop()+$(window).height()*offset ) && $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+		});
+	}
+
+	function showBlocks(blocks, offset) {
+    console.log('ow');
+		blocks.each(function(){
+			( $(this).offset().top <= $(window).scrollTop()+$(window).height()*offset && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) && $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+		});
+	}
+  //let secColor = 'rgba(33, 187, 80, 0.49)';
+  let secColor = '#e9f5e0';
 	$('#fullpage').fullpage({
-		anchors: ['hello','intro', 'skills', 'works', 'about', 'contact'],
-		sectionsColor: ['#fff', '#fefefe', '#fff', '#fefefe', '#fff', '#fefefe'],
+		anchors: ['hello','exp', 'skills', 'works', 'about', 'contact'],
+		sectionsColor: ['#fff', secColor, '#fff', secColor, '#fff', secColor],
 		menu: '#menu',
 		css3: true,
 		autoScrolling: false,
@@ -14,6 +41,8 @@ $(document).ready(function() {
     sectionSelector: 'section',
     verticalCentered: true,
     paddingTop: '56px',
+    bigSectionsDestination: 'top',
+    fitToSection: false,
 
 		onLeave: function(index, nextIndex, direction) {
 		    if(index == 1){
@@ -35,6 +64,7 @@ $(document).on('click','.navbar-collapse',function(e) {
 		$(this).collapse('hide');
 	}
 });
+
 
 // Start of Async Drift Code
 !function() {
