@@ -12,6 +12,8 @@ $(document).ready(function() {
 		slidesNavigation: true,
 		loopHorizontal: false,
     sectionSelector: 'section',
+    verticalCentered: true,
+    paddingTop: '56px',
 
 		onLeave: function(index, nextIndex, direction) {
 		    if(index == 1){
