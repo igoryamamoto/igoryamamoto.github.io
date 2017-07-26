@@ -11,7 +11,8 @@ $(document).ready(function() {
 		scrollingSpeed:500,
 		slidesNavigation: true,
 		loopHorizontal: false,
-		
+    sectionSelector: 'section',
+
 		onLeave: function(index, nextIndex, direction) {
 		    if(index == 1){
 			    $('#hello-sec').removeClass('fadeInDown animated');
@@ -20,7 +21,7 @@ $(document).ready(function() {
 		    else if(index == 2 && direction == 'down'){
 			    //alert("Going to section 1!");
 		    }
-		    
+
 		    if(nextIndex == 1 && index != 2){
 			    $('#hello-sec').addClass('fadeInDown animated');
 		    }
