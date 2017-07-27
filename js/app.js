@@ -7,28 +7,39 @@ $(document).ready(function() {
 
 	//on scolling, show/animate timeline blocks when enter the viewport
 	$(window).on('scroll', function(){
+    var top = $(window).scrollTop(),
+        height = $(window).height()*0.85;
+    if (top > height) {
+      $('.navbar-nav').css('margin-left', '100px');
+      $('nav').addClass('fixed-top');
+      $('#logo').fadeIn();
+    }
+    if (top < height+1) {
+      $('nav').removeClass('fixed-top');
+      $('#logo').fadeOut(400, function(){
+        $('.navbar-nav').css('margin-left', '164px');
+      });
+    }
 		(!window.requestAnimationFrame)
 			? setTimeout(function(){ showBlocks(timelineBlocks, offset); }, 100)
 			: window.requestAnimationFrame(function(){ showBlocks(timelineBlocks, offset); });
 	});
 
 	function hideBlocks(blocks, offset) {
-    console.log('hideou');
 		blocks.each(function(){
 			( $(this).offset().top > $(window).scrollTop()+$(window).height()*offset ) && $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
 		});
 	}
 
 	function showBlocks(blocks, offset) {
-    console.log('ow');
 		blocks.each(function(){
 			( $(this).offset().top <= $(window).scrollTop()+$(window).height()*offset && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) && $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
 		});
 	}
   //let secColor = 'rgba(33, 187, 80, 0.49)';
-  let secColor = '#e9f5e0';
+  let secColor = '#f5f5f7';
 	$('#fullpage').fullpage({
-		anchors: ['hello','exp', 'skills', 'works', 'about', 'contact'],
+		anchors: ['hello', 'exp', 'skills', 'works', 'about', 'contact'],
 		sectionsColor: ['#fff', secColor, '#fff', secColor, '#fff', secColor],
 		menu: '#menu',
 		css3: true,
@@ -39,8 +50,8 @@ $(document).ready(function() {
 		slidesNavigation: true,
 		loopHorizontal: false,
     sectionSelector: 'section',
-    verticalCentered: true,
-    paddingTop: '56px',
+    verticalCentered: false,
+    paddingTop: '70px',
     bigSectionsDestination: 'top',
     fitToSection: false,
 
