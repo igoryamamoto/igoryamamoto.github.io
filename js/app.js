@@ -89,6 +89,7 @@ $(document).ready(function() {
     $('nav').fadeIn();
   };
   $('#hello-txt').click(hello);
+  $('#name').click(gogo);
 // Skills
   $('.skill-group').hover(
     function() {

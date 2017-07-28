@@ -59,7 +59,16 @@
 	      <div class="container">
 			      <h1 role='button' id='hello-txt'> Hello </h1>
             <br>
-			      <h3> I'm <span id='name-wrapper'><span role='button' onclick='gogo()' id='name'>Ígor Yamamoto</span></span></h3>
+			      <h3> I'm
+              <span id='name-wrapper'>
+                <span role='button'
+                      ga-on="click"
+                      ga-event-category="NameAnimation"
+                      ga-event-action="play"
+                      id='name'>Ígor Yamamoto
+                </span>
+              </span>
+            </h3>
 			      <h5> Student</h5>
 			      <h5> Researcher</h5>
 			      <h5> And Developer</h5>
@@ -288,8 +297,14 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-103409512-1', 'auto');
-      ga('send', 'pageview');
+      ga('require', 'pageVisibilityTracker', {
+        sendInitialPageview: true,
+      });
+      ga('require', 'maxScrollTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'eventTracker');
     </script>
+    <script async src="./js/autotrack.js"></script>
 <!-- Bootstrap JS -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
