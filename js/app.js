@@ -183,7 +183,7 @@ $(document).on('click','.navbar-collapse',function(e) {
 		$(this).collapse('hide');
 	}
 });
-
+/*
 // Start of Async Drift Code
 !function() {
   var t;
@@ -206,3 +206,4 @@ $(document).on('click','.navbar-collapse',function(e) {
 drift.SNIPPET_VERSION = '0.3.1';
 drift.load('buadc7m49gfs');
 // End of Async Drift Code
+*/
