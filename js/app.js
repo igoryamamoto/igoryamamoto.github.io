@@ -1,43 +1,74 @@
+// Timeline functions
+function hideBlocks(blocks, offset) {
+  blocks.each(function(){
+    ( $(this).offset().top > $(window).scrollTop()+$(window).height()*offset ) && $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+  });
+}
+function showBlocks(blocks, offset) {
+  blocks.each(function(){
+    ( $(this).offset().top <= $(window).scrollTop()+$(window).height()*offset && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) && $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+  });
+}
+function hello() {
+    $('#hello-txt').removeClass().addClass('pulse animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $('#hello-txt').removeClass();
+    });
+};
 $(document).ready(function() {
   var timelineBlocks = $('.cd-timeline-block'),
-		offset = 0.8;
-
-	//hide timeline blocks which are outside the viewport
+      offset = 0.8,
+      secColor = '#f5f5f7';
+  if ($(window).width() <= 1024) {
+    $('nav').hide();
+    $('#logo').css('padding','0px');
+  } else {
+    $('nav').fadeIn();
+  };
+  $(window).on('resize', function() {
+    if ($(window).width() <= 1024) {
+      $('nav').hide();
+      $('#logo').css('padding','0px');
+    } else {
+      $('nav').fadeIn();
+      $('#logo').css('padding-left','73px');
+    };
+  });
+// Animate Hello text
+  window.setTimeout(function() {
+    $('#hello-txt').addClass('pulse animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $('#hello-txt').removeClass()});
+  }, 400);
+// Hide timeline blocks which are outside the viewport
 	hideBlocks(timelineBlocks, offset);
-
-	//on scolling, show/animate timeline blocks when enter the viewport
+// Scroll
 	$(window).on('scroll', function(){
     var top = $(window).scrollTop(),
-        height = $(window).height()*0.85;
-    if (top > height) {
-      $('.navbar-nav').css('margin-left', '100px');
+        height = $(window).height(),
+        width = $(window).width(),
+        threshold = height*0.85;
+    if (top > threshold) {
+      $('.navbar-nav').css('margin-left', '57px');
       $('nav').addClass('fixed-top');
+      $('nav').fadeIn();
       $('#logo').fadeIn();
     }
-    if (top < height+1) {
+    if (top <= threshold) {
       $('nav').removeClass('fixed-top');
       $('#logo').fadeOut(400, function(){
-        $('.navbar-nav').css('margin-left', '164px');
+        $('.navbar-nav').css('margin-left', '194px');
       });
+      if (width <= 1024) {
+        $('nav').fadeOut();
+      };
     }
+    // Timeline stuff
+    // On scolling, show/animate timeline blocks when enter the viewport
 		(!window.requestAnimationFrame)
 			? setTimeout(function(){ showBlocks(timelineBlocks, offset); }, 100)
 			: window.requestAnimationFrame(function(){ showBlocks(timelineBlocks, offset); });
 	});
 
-	function hideBlocks(blocks, offset) {
-		blocks.each(function(){
-			( $(this).offset().top > $(window).scrollTop()+$(window).height()*offset ) && $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
-		});
-	}
-
-	function showBlocks(blocks, offset) {
-		blocks.each(function(){
-			( $(this).offset().top <= $(window).scrollTop()+$(window).height()*offset && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) && $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
-		});
-	}
-  //let secColor = 'rgba(33, 187, 80, 0.49)';
-  let secColor = '#f5f5f7';
+// FullPage stuff
 	$('#fullpage').fullpage({
 		anchors: ['hello', 'exp', 'skills', 'works', 'about', 'contact'],
 		sectionsColor: ['#fff', secColor, '#fff', secColor, '#fff', secColor],
@@ -54,28 +85,14 @@ $(document).ready(function() {
     paddingTop: '70px',
     bigSectionsDestination: 'top',
     fitToSection: false,
-
-		onLeave: function(index, nextIndex, direction) {
-		    if(index == 1){
-			    $('#hello-sec').removeClass('fadeInDown animated');
-		    }
-
-		    else if(index == 2 && direction == 'down'){
-			    //alert("Going to section 1!");
-		    }
-
-		    if(nextIndex == 1 && index != 2){
-			    $('#hello-sec').addClass('fadeInDown animated');
-		    }
-		}
-	});
+  });
 });
+// Close dropdown when click a section on mobile
 $(document).on('click','.navbar-collapse',function(e) {
 	if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
 		$(this).collapse('hide');
 	}
 });
-
 
 // Start of Async Drift Code
 !function() {

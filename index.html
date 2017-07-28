@@ -25,7 +25,7 @@
 <!-- HEADER -->
     <header>
       <!-- NAV -->
-      <nav id="menu" class="navbar navbar-light navbar-toggleable-sm" role="navigation">
+      <nav id="menu" class="navbar navbar-light navbar-toggleable-md" role="navigation">
 		    <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 		    </button>
@@ -55,20 +55,14 @@
 	  </header>
     <main id='fullpage'>
 <!-- HELLO -->
-      <section class="fadeInDown animated" id="hello-sec">
+      <section id="hello-sec">
 	      <div class="container">
-		      <div class="row">
-			      <div id="hello-block" class="col-md-6">
-				      <h1> Hello </h1>
-				      <h3> I'm Ígor </h3>
-				      <h5> Student</h5>
-				      <h5> Researcher</h5>
-				      <h5> And Developer</h5>
-			      </div>
-			      <div class="col-md-6">
-				      <img id="me" alt="My photo" src="./img/me2.jpg">
-			      </div>
-		      </div>
+			      <h1 role='button' onclick="hello()" id='hello-txt'> Hello </h1>
+            <br>
+			      <h3> I'm <span id='name'>Ígor Yamamoto</span> </h3>
+			      <h5> Student</h5>
+			      <h5> Researcher</h5>
+			      <h5> And Developer</h5>
 	      </div>
       </section>
 <!-- EXPERIENCE -->
@@ -234,10 +228,11 @@
 <!-- ABOUT -->
 	    <section id="about-sec">
         <div class="container">
-		      <h1> About </h1>
+		      <h1> About Me </h1>
           <br/>
+          <img id="me" alt="My photo" src="./img/me2.jpg">
 		      <p>I'm a <a href="http://automacao.ufsc.br/">Systems and Control Engineering</a> student at <a href="https://ufsc.br">UFSC</a> since 2014.  I love learning and teaching, I have interest in technologies of all kinds and I am always opened to new ones.</p>
-		      <p>My main interests are in process control, mathematical optmization, computer science, software and web development.</p>
+          <p>My main interests are in process control, mathematical optmization, computer science, software and web development.</p>
 		      <p>I have experience as teaching assistant and as undergraduate researcher. Currently I am working as python developer, creating algorithms and different strategies of Model Predictive Control implementation.</p>
 			    <p>I like hiking and sushi.</p>
 		    </div>
@@ -246,26 +241,26 @@
 	    <section id="contact-sec">
 		    <div class="container">
 			    <h1> Contact </h1>
-			    <br/><br/><br/>
+			    <br/><br/><br/><br/><br/>
 			    <div id="contact-logos" class="row">
 				    <div class="col-4 col-sm-2">
-					    <a href="mailto:igor.a.r.y@gmail.com" target="_blank"><img src="" data-src="./img/email-256.png"></a>
+					    <a href="mailto:igor.a.r.y@gmail.com" target="_blank"><img class='contact-logo' src="" data-src="./img/email-64-black.png"></a>
 				    </div>
 				    <div class="col-4 col-sm-2">
-					    <a href="https://www.linkedin.com/in/igor-yamamoto" target="_blank"><img src="" data-src="./img/linkedin-256.png"></a>
+					    <a href="https://www.linkedin.com/in/igor-yamamoto" target="_blank"><img class='contact-logo' src="" data-src="./img/linkedin-64-black.png"></a>
 				    </div>
 				    <div class="col-4 col-sm-2">
-					    <a href="https://www.facebook.com/yamamotoigor" target="_blank"><img src="" data-src="./img/facebook-256.png"></a>
+					    <a href="https://www.facebook.com/yamamotoigor" target="_blank"><img class='contact-logo' src="" data-src="./img/facebook-64-black.png"></a>
 				    </div>
 				    <div class="col-4 col-sm-2">
-					    <a href="https://github.com/igoryamamoto" target="_blank"><img src="" data-src="./img/github-6-256.png"></a>
+					    <a href="https://github.com/igoryamamoto" target="_blank"><img class='contact-logo' src="" data-src="./img/github-6-64-black.png"></a>
 				    </div>
 				    <div class="col-4 col-sm-2">
-					    <a href="skype:live:igoryamamoto?add" target="_blank"><img src="" data-src="./img/skype-256.png"></a>
+					    <a href="skype:live:igoryamamoto?add" target="_blank"><img class='contact-logo' src="" data-src="./img/skype-64-black.png"></a>
 				    </div>
 				    <div class="col-4 col-sm-2">
 				    <a href="https://plus.google.com/u/0/117720578895531336282" target="_blank">
-				      <img src="" data-src="./img/google-plus-256.png">
+				      <img class='contact-logo' src="" data-src="./img/google-plus-64-black.png">
 				    </a>
 				    </div>
 			    </div>
