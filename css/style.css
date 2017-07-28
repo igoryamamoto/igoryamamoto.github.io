@@ -29,7 +29,7 @@ nav {
 .navbar-nav {
   font-size: 1.2rem;
   font-weight: 600;
-  margin-left: 194px;
+  margin-left: 17vw;
 }
 .nav-item {
   padding-left:30px;
@@ -39,6 +39,8 @@ nav {
     padding-left: 73px;
     height: 32px;
     display: none;
+    position: absolute;
+    top: 14px;
 }
 p {
   font-family: 'Roboto Slab', serif;
@@ -176,16 +178,22 @@ footer {
 	text-align: center;
 }
 @media(max-width: 992px) {
+  #logo {
+    position: static;
+  }
 	#me{
 		width: 20rem;
 	}
 	.work-in-progress{
 		width: 25rem;
 	}
-	h1{
-	  font-size: 4em;
+	h1 {
+	  font-size: 3em;
 	}
-	p{
+  h2 {
+    font-size: 1.5em;
+  }
+	p {
 	  font-size: 1.2em;
 	}
 }
@@ -196,9 +204,15 @@ footer {
 	.work-in-progress{
 		width: 20rem;
 	}
+  .active.nav-item > a:before {
+    width: 20%;
+  }
 	h1{
 	  font-size: 3em;
 	}
+  h2 {
+    font-size: 1.5em;
+  }
 	p{
 	  font-size: 1em;
 	}
@@ -211,11 +225,17 @@ footer {
 		width: 15rem;
 	}
   .active.nav-item > a:before {
-    width: 20%;
+    width: 30%;
   }
-  h1{
+  .navbar-nav {
+    margin: 0;
+  }
+  h1 {
 	  font-size: 2em;
 	}
+  h2 {
+    font-size: 1.2em;
+  }
   p{
 	  font-size: 1em;
 	}
@@ -261,7 +281,7 @@ footer {
   width: 4px;
   background: #d7ede4;
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 992px) {
   #cd-timeline {
     margin-top: 3em;
     margin-bottom: 3em;
@@ -287,7 +307,7 @@ footer {
 .cd-timeline-block:last-child {
   margin-bottom: 0;
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 992px) {
   .cd-timeline-block {
     margin: 4em 0;
   }
@@ -310,13 +330,13 @@ footer {
 }
 .cd-timeline-img img {
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   position: relative;
   left: 50%;
   top: 50%;
-  margin-left: -16px;
-  margin-top: -16px;
+  margin-left: -12px;
+  margin-top: -12px;
 }
 .cd-timeline-img.bg-born {
   background: #75ce66;
@@ -330,7 +350,7 @@ footer {
 .cd-timeline-img.bg-code {
   background: #c03b44;
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 992px) {
   .cd-timeline-img {
     width: 60px;
     height: 60px;
@@ -339,6 +359,12 @@ footer {
     /* Force Hardware Acceleration in WebKit */
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
+  }
+  .cd-timeline-img img {
+    width: 32px;
+    height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
   }
   .cssanimations .cd-timeline-img.is-hidden {
     visibility: hidden;
@@ -474,7 +500,7 @@ footer {
     font-size: 0.875rem;
   }
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 992px) {
   .cd-timeline-content {
     margin-left: 0;
     padding: 1.6em;
@@ -526,7 +552,7 @@ footer {
   }
 }
 
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 992px) {
   /* inverse bounce effect on even content blocks */
   .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
     -webkit-animation: cd-bounce-2-inverse 0.6s;

@@ -47,28 +47,34 @@ function skillSelect(className) {
   }
 };
 function createCircles() {
-    var skills = [
-      { id: 'python', colors: ['#f0f0f0', '#407EB0'], value: 90, text: 'Python' },
-      { id: 'ruby', colors: ['#f0f0f0', '#EC1622'], value: 50, text: 'Ruby (Rails)' },
-      { id: 'sql', colors: ['#f0f0f0', '#1BAFEC'], value: 65, text: 'SQL' },
-      { id: 'html', colors: ['#f0f0f0', '#E54F27'], value: 95, text: 'HTML5' },
-      { id: 'css', colors: ['#f0f0f0', '#2177FF'], value: 90, text: 'CSS3' },
-      { id: 'js', colors: ['#f0f0f0', '#F0DB4F'], value: 70, text: 'Javascript' },
-      { id: 'matlab', colors: ['#f0f0f0', '#FF8911'], value: 75, text: 'MATLAB' },
-      { id: 'labview', colors: ['#f0f0f0', '#FFE700'], value: 60, text: 'LabVIEW' },
-      { id: 'arduino', colors: ['#f0f0f0', '#0CA1A6'], value: 75, text: 'Arduino' },
-      { id: 'git', colors: ['#f0f0f0', '#24292E'], value: 85, text: 'Git' },
-      { id: 'latex', colors: ['#f0f0f0', '#008080'], value: 65, text: 'Latex' },
-      { id: 'learn', colors: ['#f0f0f0', '#0E579C'], value: 95, text: 'Learn new tech' },
-      { id: 'pt', colors: ['#f0f0f0', '#239E46'], value: 99.9, text: 'Portuguese' },
-      { id: 'en', colors: ['#f0f0f0', '#EC1C24'], value: 75, text: 'English' },
-    ];
+    var radius, width, winWidth = $(window).width(),
+        skills = [
+          { id: 'python', colors: ['#f0f0f0', '#407EB0'], value: 90, text: 'Python' },
+          { id: 'ruby', colors: ['#f0f0f0', '#EC1622'], value: 50, text: 'Ruby' },
+          { id: 'sql', colors: ['#f0f0f0', '#1BAFEC'], value: 65, text: 'SQL' },
+          { id: 'html', colors: ['#f0f0f0', '#E54F27'], value: 95, text: 'HTML5' },
+          { id: 'css', colors: ['#f0f0f0', '#2177FF'], value: 90, text: 'CSS3' },
+          { id: 'js', colors: ['#f0f0f0', '#F0DB4F'], value: 70, text: 'Javascript' },
+          { id: 'matlab', colors: ['#f0f0f0', '#FF8911'], value: 75, text: 'MATLAB' },
+          { id: 'labview', colors: ['#f0f0f0', '#FFE700'], value: 60, text: 'LabVIEW' },
+          { id: 'arduino', colors: ['#f0f0f0', '#0CA1A6'], value: 75, text: 'Arduino' },
+          { id: 'git', colors: ['#f0f0f0', '#24292E'], value: 85, text: 'Git' },
+          { id: 'latex', colors: ['#f0f0f0', '#008080'], value: 65, text: 'Latex' },
+          { id: 'learn', colors: ['#f0f0f0', '#0E579C'], value: 95, text: 'Learn new tech' },
+          { id: 'pt', colors: ['#f0f0f0', '#239E46'], value: 99.9, text: 'Portuguese' },
+          { id: 'en', colors: ['#f0f0f0', '#EC1C24'], value: 75, text: 'English' },
+        ];
+    if(winWidth < 350) { radius = 40; width = 10; } else
+    if(winWidth < 576) { radius = 50; width = 10; } else
+    if(winWidth < 768) { radius = 60; width = 15; } else
+    if(winWidth < 992) { radius = 80; width = 20; }
+    else { radius = 100; width = 20; }
 		skills.map(function(s) {
 			Circles.create({
 				id: s.id,
 				value: s.value,
-				radius: 80,
-				width: 20,
+				radius: radius,
+				width: width,
 				colors: s.colors,
         text: s.text,
         textClass: 'skill-txt',
@@ -82,7 +88,7 @@ $(document).ready(function() {
       secColor = '#f5f5f7',
       currSkillGroup = '.backend';
   skillSelect(currSkillGroup);
-  if ($(window).width() <= 1024) {
+  if ($(window).width() <= 768) {
     $('nav').hide();
     $('#logo').css('padding','0px');
   } else {
@@ -127,17 +133,14 @@ $(document).ready(function() {
         width = $(window).width(),
         threshold = height*0.85;
     if (top > threshold) {
-      $('.navbar-nav').css('margin-left', '57px');
       $('nav').addClass('fixed-top');
       $('nav').fadeIn();
       $('#logo').fadeIn();
     }
     if (top <= threshold) {
       $('nav').removeClass('fixed-top');
-      $('#logo').fadeOut(400, function(){
-        $('.navbar-nav').css('margin-left', '194px');
-      });
-      if (width <= 1024) {
+      $('#logo').fadeOut(400);
+      if (width <= 768) {
         $('nav').fadeOut();
       };
     }
