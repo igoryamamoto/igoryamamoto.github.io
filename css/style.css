@@ -105,6 +105,20 @@ p > a:hover:before,
 #name {
   color: #00c46d;
 }
+#name:hover {
+    animation: hue 6s infinite linear;
+}
+#name-wrapper {
+  display:inline-block;
+}
+@keyframes hue {
+    from {
+      filter: hue-rotate(0deg);
+    }
+    to {
+      filter: hue-rotate(360deg);
+    }
+}
 #contact-sec {
   padding-top: 140px !important;
   padding-bottom: 70px;
@@ -125,14 +139,17 @@ p > a:hover:before,
 @keyframes shake {
   10%, 75% {
     transform: translate3d(-1px, 0, 0);
+    transform: rotateZ(-10deg);
   }
 
   50% {
     transform: translate3d(3px, 0, 0);
+    transform: rotateZ(30deg);
   }
 
   90% {
     transform: translate3d(1px, 0, 0);
+    transform: rotateZ(10deg);
   }
 }
 .list-group-item {

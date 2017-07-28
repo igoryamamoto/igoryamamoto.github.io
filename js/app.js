@@ -14,6 +14,14 @@ function hello() {
       $('#hello-txt').removeClass();
     });
 };
+function gogo() {
+    $('#name-wrapper').removeClass().addClass('hinge animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $('#name-wrapper').removeClass();
+    });
+    window.setTimeout(function() {
+      $.fn.fullpage.moveSectionDown();
+    }, 1800);
+};
 $(document).ready(function() {
   var timelineBlocks = $('.cd-timeline-block'),
       offset = 0.8,
