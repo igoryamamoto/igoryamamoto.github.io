@@ -1,0 +1,197 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Igor/Code/html5-boilerplate_v6.0.0/index.html",
+		"/C/Users/Igor/Code/html5-boilerplate_v6.0.0/doc/css.md",
+		"/C/Users/Igor/Code/html5-boilerplate_v6.0.0/.editorconfig",
+		"/C/Users/Igor/Code/html5-boilerplate_v6.0.0/browserconfig.xml",
+		"/C/Users/Igor/Code/html5-boilerplate_v6.0.0/humans.txt",
+		"/C/Users/Igor/Code/html5-boilerplate_v6.0.0/icon.png",
+		"/C/Users/Igor/Code/html5-boilerplate_v6.0.0/site.webmanifest",
+		"/C/Users/Igor/Code/html5-boilerplate_v6.0.0/js/vendor/modernizr-3.5.0.min.js",
+		"/C/Users/Igor/Code/html5-boilerplate_v6.0.0/css/normalize.css",
+		"/C/Users/Igor/Code/html5-boilerplate_v6.0.0/tile-wide.png",
+		"/C/Users/Igor/Desktop/html5",
+		"/C/Users/Igor/Code/gula/src/components/Sushi.js",
+		"/C/Users/Igor/Code/gula/src/css/Header.css",
+		"/C/Users/Igor/Code/gula/src/components/Header.js",
+		"/C/Users/Igor/Code/gula/src/components/Footer.js",
+		"/C/Users/Igor/Code/gula/src/components/App.js",
+		"/C/Users/Igor/Code/gula/package-lock.json",
+		"/C/Program Files/Sublime Text 3/sublime.py"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Component",
+			"getMuiTheme",
+			"import"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"heade",
+				"src\\css\\Header.css"
+			],
+			[
+				"header",
+				"src\\components\\Header.js"
+			],
+			[
+				"login",
+				"src\\components\\Login.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 236.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

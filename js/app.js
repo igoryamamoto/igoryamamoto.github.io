@@ -133,12 +133,11 @@ $(document).ready(function() {
         width = $(window).width(),
         threshold = height*0.85;
     if (top > threshold) {
-      $('nav').addClass('fixed-top');
-      $('nav').fadeIn();
+      $('nav').addClass('fixed-top').fadeIn().css('box-shadow', '0 calc(8px / 2) 8px rgba(0,0,0,.05)');
       $('#logo').fadeIn();
     }
     if (top <= threshold) {
-      $('nav').removeClass('fixed-top');
+      $('nav').removeClass('fixed-top').css('box-shadow', 'none');
       $('#logo').fadeOut(400);
       if (width <= 768) {
         $('nav').fadeOut();
