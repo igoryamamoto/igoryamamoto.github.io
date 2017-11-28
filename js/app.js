@@ -22,34 +22,11 @@ function gogo() {
       $.fn.fullpage.moveSectionDown();
     }, 1800);
 };
-function skillSelect(className) {
-  $('.skill-group').addClass('text-muted');
-  $(className).removeClass('text-muted');
-  $('.circles-group').css({transform: 'scale(0.5)', display: 'none'});
-  $('.circles-group' + className).css({transform: 'scale(1)', display: 'block'});
-  switch (className) {
-    case '.backend':
-      $('.circles-group.frontend').css({display: 'block'});
-      break;
-    case '.frontend':
-      $('.circles-group.engineering').css({display: 'block'});
-      break;
-    case '.engineering':
-      $('.circles-group.others').css({display: 'block'});
-      break;
-    case '.others':
-      $('.circles-group.lang').css({display: 'block'});
-      break;
-    case '.lang':
-      $('.circles-group.continue').css({display: 'block'});
-      break;
-    default:
-  }
-};
 function createCircles() {
     var radius, width, winWidth = $(window).width(),
         skills = [
           { id: 'python', colors: ['#f0f0f0', '#407EB0'], value: 90, text: 'Python' },
+          { id: 'jupyter', colors: ['#f0f0f0', '#407EB0'], value: 90, text: 'Jupyter' },
           { id: 'ruby', colors: ['#f0f0f0', '#EC1622'], value: 50, text: 'Ruby' },
           { id: 'sql', colors: ['#f0f0f0', '#1BAFEC'], value: 65, text: 'SQL' },
           { id: 'html', colors: ['#f0f0f0', '#E54F27'], value: 95, text: 'HTML5' },
@@ -60,15 +37,15 @@ function createCircles() {
           { id: 'arduino', colors: ['#f0f0f0', '#0CA1A6'], value: 75, text: 'Arduino' },
           { id: 'git', colors: ['#f0f0f0', '#24292E'], value: 85, text: 'Git' },
           { id: 'latex', colors: ['#f0f0f0', '#008080'], value: 65, text: 'Latex' },
-          { id: 'learn', colors: ['#f0f0f0', '#0E579C'], value: 95, text: 'Fast learning' },
+          { id: 'learn', colors: ['#f0f0f0', '#0E579C'], value: 95, text: 'Fast-learn' },
           { id: 'pt', colors: ['#f0f0f0', '#239E46'], value: 99.9, text: 'Portuguese' },
           { id: 'en', colors: ['#f0f0f0', '#EC1C24'], value: 75, text: 'English' },
         ];
-    if(winWidth < 350) { radius = 40; width = 10; } else
-    if(winWidth < 576) { radius = 50; width = 10; } else
-    if(winWidth < 768) { radius = 60; width = 15; } else
-    if(winWidth < 992) { radius = 80; width = 20; }
-    else { radius = 100; width = 20; }
+    if(winWidth < 350) { radius = 40; width = 8; } else
+    if(winWidth < 576) { radius = 40; width = 9; } else
+    if(winWidth < 768) { radius = 40; width = 10; } else
+    if(winWidth < 992) { radius = 50; width = 12; }
+    else { radius = 70; width = 16; }
 		skills.map(function(s) {
 			Circles.create({
 				id: s.id,
@@ -82,12 +59,17 @@ function createCircles() {
 			});
     });
 }
+
+//////////////////////////////////////////////////////////////////////////////
+
 $(document).ready(function() {
   var timelineBlocks = $('.cd-timeline-block'),
       offset = 0.8,
       secColor = '#f5f5f7',
-      currSkillGroup = '.backend';
-  skillSelect(currSkillGroup);
+      prevSkill = '.web-skills';
+      nextSkill = '.web-skills';
+  $('.circles-group').hide();
+  $(nextSkill).show();
   if ($(window).width() <= 768) {
     $('nav').hide();
     $('#logo').css('padding','0px');
@@ -96,20 +78,6 @@ $(document).ready(function() {
   };
   $('#hello-txt').click(hello);
   $('#name').click(gogo);
-// Skills
-  $('.skill-group').hover(
-    function() {
-      var className = '.' + $(this).attr('class').split(' ')[0];
-      skillSelect(className);
-    },
-    function() {
-      skillSelect(currSkillGroup);
-    }
-  ).click(
-    function() {
-      currSkillGroup = '.' + $(this).attr('class').split(' ')[0];
-    }
-  );
   $(window).on('resize', function() {
     if ($(window).width() <= 1024) {
       $('nav').hide();
@@ -150,6 +118,72 @@ $(document).ready(function() {
 			: window.requestAnimationFrame(function(){ showBlocks(timelineBlocks, offset); });
 	});
 
+  var ctx = document.getElementById('skills-radar').getContext('2d');
+  var myRadarChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+        labels: ['Web Development', 'Engineering', 'Languages', 'Multidisciplinary', 'Data Science'],
+        datasets: [{
+            label: "Skills",
+            backgroundColor: "rgba(12, 156, 92, 0.45)",
+            borderColor: "rgba(12, 156, 92, 0.95)",
+            radius: 6,
+            pointRadius: 6,
+            pointBorderWidth: 3,
+            pointBackgroundColor: "rgba(12, 156, 92, 0.95)",
+            pointBorderColor: "rgba(12, 156, 92, 0.95)",
+            pointHoverRadius: 10,
+            data: [90, 75, 70, 80, 85]
+        }]
+    },
+    options: {
+      scale: {
+        ticks: {
+          beginAtZero: true,
+          min: 0,
+          max: 100,
+          stepSize: 20
+        },
+        pointLabels: {
+          fontSize: 16
+        }
+      },
+      legend: {
+        position: 'none'
+      }
+    }
+  });
+  document.getElementById('skills-radar').onclick = function(evt){
+    var activePoints = myRadarChart.getElementsAtEvent(evt);
+    if(activePoints.length > 0)
+     {
+       var clickedElementindex = activePoints[0]["_index"];
+       var label = myRadarChart.data.labels[clickedElementindex];
+       //console.log(label);
+       switch(label) {
+         case 'Web Development':
+           nextSkill = '.web-skills';
+           break;
+         case 'Engineering':
+           nextSkill = '.eng-skills';
+           break;
+         case 'Languages':
+           nextSkill = '.lang-skills';
+           break;
+         case 'Multidisciplinary':
+           nextSkill = '.multi-skills';
+           break;
+         case 'Data Science':
+           nextSkill = '.ds-skills';
+           break;
+       }
+       $(prevSkill).hide();
+       $(nextSkill).show();
+       createCircles();
+       prevSkill = nextSkill;
+    }
+};
+
 // FullPage stuff
 	$('#fullpage').fullpage({
 		anchors: ['hello', 'exp', 'skills', 'works', 'about', 'contact'],
@@ -175,6 +209,7 @@ $(document).ready(function() {
       }
     },
   });
+
 });
 // Close dropdown when click a section on mobile
 $(document).on('click','.navbar-collapse',function(e) {

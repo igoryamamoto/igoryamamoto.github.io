@@ -180,47 +180,45 @@
         </div>
       </section>
 <!-- SKILLS -->
-	    <section id="skills-sec">
+	    <section class='fp-auto-height' id="skills-sec">
 		    <div class="container">
           <h1> Skills </h1>
+          <br/>
           <div class='row'>
-            <div class='col-3'>
-              <h2 class='backend skill-group'> Backend </h2>
-              <h2 class='frontend skill-group text-muted'> Frontend </h2>
-              <h2 class='engineering skill-group text-muted'> Engineering </h2>
-              <h2 class='others skill-group text-muted'> Others </h2>
-              <h2 class='lang skill-group text-muted'> Languages </h2>
+            <div class='col-md-7'>
+              <div class='chart-container'>
+                <canvas role='button' id="skills-radar"></canvas>
+              </div>
             </div>
-            <div class='col-9'>
-              <div class='backend circles-group'>
+            <div class='col-md-4 offset-1'>
+              <div class='web-skills circles-group'>
                 <span class="circle" id="python"></span>
                 <span class="circle" id="ruby"></span>
             		<span class="circle" id="sql"></span>
-              </div>
-              <div class='frontend circles-group'>
-            		<span class="circle" id="html"></span>
+                <span class="circle" id="html"></span>
                 <span class="circle" id="css"></span>
                 <span class="circle" id="js"></span>
               </div>
-              <div class='engineering circles-group'>
+              <div class='ds-skills circles-group'>
+                <span class="circle" id="jupyter"></span>
+              </div>
+              <div class='eng-skills circles-group'>
             		<span class="circle" id="matlab"></span>
                 <span class="circle" id="labview"></span>
                 <span class="circle" id="arduino"></span>
               </div>
-              <div class='others circles-group'>
+              <div class='multi-skills circles-group'>
                 <span class="circle" id="git"></span>
                 <span class="circle" id="latex"></span>
                 <span class="circle" id="learn"></span>
               </div>
-              <div class='lang circles-group'>
+              <div class='lang-skills circles-group'>
                 <span class="circle" id="pt"></span>
                 <span class="circle" id="en"></span>
               </div>
-              <div class='continue circles-group'>
-                <h1> ... </h1>
-              </div>
             </div>
           </div>
+          <br/><br/><br/>
 		    </div>
 	    </section>
 <!-- WORKS -->
@@ -303,6 +301,8 @@
 		<script src="./js/jquery.fullPage.min.js"></script>
 <!-- Circles JS -->
     <script src="./js/circles.min.js"></script>
+<!-- Charts JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 <!-- My JS -->
 		<script src="./js/app.js"></script>
   </body>
