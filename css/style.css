@@ -274,7 +274,7 @@ footer {
   left: 18px;
   height: 100%;
   width: 4px;
-  background: #d7ede4;
+  background: rgba(41, 43, 44, 0.86);
 }
 @media only screen and (min-width: 992px) {
   #cd-timeline {
@@ -435,7 +435,7 @@ footer {
   background: white;
   border-radius: 0.25em;
   padding: 1em;
-  box-shadow: 0 3px 0 #d7e4ed;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px calc(4px) 8px;
 }
 .cd-timeline-content:after {
   content: "";
