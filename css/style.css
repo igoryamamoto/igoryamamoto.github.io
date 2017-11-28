@@ -150,18 +150,13 @@ p > a:hover:before,
   transform: translate3d(0, 0, 0);
 }
 @keyframes shake {
-  10%, 75% {
-    transform: translate3d(-1px, 0, 0);
+  30% {
+    transform: translate3d(-3px, 0, 0);
     transform: rotateZ(-10deg);
   }
 
-  50% {
+  60% {
     transform: translate3d(3px, 0, 0);
-    transform: rotateZ(30deg);
-  }
-
-  90% {
-    transform: translate3d(1px, 0, 0);
     transform: rotateZ(10deg);
   }
 }

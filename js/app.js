@@ -60,7 +60,7 @@ function createCircles() {
           { id: 'arduino', colors: ['#f0f0f0', '#0CA1A6'], value: 75, text: 'Arduino' },
           { id: 'git', colors: ['#f0f0f0', '#24292E'], value: 85, text: 'Git' },
           { id: 'latex', colors: ['#f0f0f0', '#008080'], value: 65, text: 'Latex' },
-          { id: 'learn', colors: ['#f0f0f0', '#0E579C'], value: 95, text: 'Learn new tech' },
+          { id: 'learn', colors: ['#f0f0f0', '#0E579C'], value: 95, text: 'Fast learning' },
           { id: 'pt', colors: ['#f0f0f0', '#239E46'], value: 99.9, text: 'Portuguese' },
           { id: 'en', colors: ['#f0f0f0', '#EC1C24'], value: 75, text: 'English' },
         ];
