@@ -22,54 +22,12 @@ function gogo() {
       $.fn.fullpage.moveSectionDown();
     }, 1800);
 };
-function createCircles() {
-    var radius, width, winWidth = $(window).width(),
-        skills = [
-          { id: 'python', colors: ['#f0f0f0', '#407EB0'], value: 90, text: 'Python' },
-          { id: 'jupyter', colors: ['#f0f0f0', '#407EB0'], value: 90, text: 'Jupyter' },
-          { id: 'ruby', colors: ['#f0f0f0', '#EC1622'], value: 50, text: 'Ruby' },
-          { id: 'sql', colors: ['#f0f0f0', '#1BAFEC'], value: 65, text: 'SQL' },
-          { id: 'html', colors: ['#f0f0f0', '#E54F27'], value: 95, text: 'HTML5' },
-          { id: 'css', colors: ['#f0f0f0', '#2177FF'], value: 90, text: 'CSS3' },
-          { id: 'js', colors: ['#f0f0f0', '#F0DB4F'], value: 70, text: 'Javascript' },
-          { id: 'matlab', colors: ['#f0f0f0', '#FF8911'], value: 75, text: 'MATLAB' },
-          { id: 'labview', colors: ['#f0f0f0', '#FFE700'], value: 60, text: 'LabVIEW' },
-          { id: 'arduino', colors: ['#f0f0f0', '#0CA1A6'], value: 75, text: 'Arduino' },
-          { id: 'git', colors: ['#f0f0f0', '#24292E'], value: 85, text: 'Git' },
-          { id: 'latex', colors: ['#f0f0f0', '#008080'], value: 65, text: 'Latex' },
-          { id: 'learn', colors: ['#f0f0f0', '#0E579C'], value: 95, text: 'Fast-learn' },
-          { id: 'pt', colors: ['#f0f0f0', '#239E46'], value: 99.9, text: 'Portuguese' },
-          { id: 'en', colors: ['#f0f0f0', '#EC1C24'], value: 75, text: 'English' },
-        ];
-    if(winWidth < 350) { radius = 40; width = 8; } else
-    if(winWidth < 576) { radius = 40; width = 9; } else
-    if(winWidth < 768) { radius = 40; width = 10; } else
-    if(winWidth < 992) { radius = 50; width = 12; }
-    else { radius = 70; width = 16; }
-		skills.map(function(s) {
-			Circles.create({
-				id: s.id,
-				value: s.value,
-				radius: radius,
-				width: width,
-				colors: s.colors,
-        text: s.text,
-        textClass: 'skill-txt',
-        styleText: true,
-			});
-    });
-}
 
 //////////////////////////////////////////////////////////////////////////////
 
 $(document).ready(function() {
   var timelineBlocks = $('.cd-timeline-block'),
-      offset = 0.8,
-      secColor = '#f5f5f7',
-      prevSkill = '.web-skills';
-      nextSkill = '.web-skills';
-  $('.circles-group').hide();
-  $(nextSkill).show();
+      offset = 0.8;
   if ($(window).width() <= 768) {
     $('nav').hide();
     $('#logo').css('padding','0px');
@@ -119,6 +77,7 @@ $(document).ready(function() {
 	});
 
   var ctx = document.getElementById('skills-radar').getContext('2d');
+  var pointBC = "rgba(12, 156, 92, 0.95)"
   var myRadarChart = new Chart(ctx, {
     type: 'radar',
     data: {
@@ -131,14 +90,15 @@ $(document).ready(function() {
             pointRadius: 6,
             pointBorderWidth: 3,
             pointBackgroundColor: "rgba(12, 156, 92, 0.95)",
-            pointBorderColor: "rgba(12, 156, 92, 0.95)",
+            pointBorderColor: [pointBC, pointBC, pointBC, pointBC, pointBC],
             pointHoverRadius: 10,
-            data: [90, 75, 70, 80, 85]
+            data: [85, 75, 70, 75, 80]
         }]
     },
     options: {
       scale: {
         ticks: {
+          display: false,
           beginAtZero: true,
           min: 0,
           max: 100,
@@ -153,37 +113,7 @@ $(document).ready(function() {
       }
     }
   });
-  document.getElementById('skills-radar').onclick = function(evt){
-    var activePoints = myRadarChart.getElementsAtEvent(evt);
-    if(activePoints.length > 0)
-     {
-       var clickedElementindex = activePoints[0]["_index"];
-       var label = myRadarChart.data.labels[clickedElementindex];
-       //console.log(label);
-       switch(label) {
-         case 'Web Development':
-           nextSkill = '.web-skills';
-           break;
-         case 'Engineering':
-           nextSkill = '.eng-skills';
-           break;
-         case 'Languages':
-           nextSkill = '.lang-skills';
-           break;
-         case 'Multidisciplinary':
-           nextSkill = '.multi-skills';
-           break;
-         case 'Data Science':
-           nextSkill = '.ds-skills';
-           break;
-       }
-       $(prevSkill).hide();
-       $(nextSkill).show();
-       createCircles();
-       prevSkill = nextSkill;
-    }
-};
-
+  var secColor = '#f5f5f7';
 // FullPage stuff
 	$('#fullpage').fullpage({
 		anchors: ['hello', 'exp', 'skills', 'works', 'about', 'contact'],
@@ -200,14 +130,7 @@ $(document).ready(function() {
     verticalCentered: false,
     paddingTop: '70px',
     bigSectionsDestination: 'top',
-    fitToSection: false,
-    onLeave(index, nextIndex, direction) {
-      if(nextIndex == 3) {
-        window.setTimeout(function() {
-          createCircles();
-        }, 400);
-      }
-    },
+    fitToSection: false
   });
 
 });
