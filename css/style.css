@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Slab');
-.chart-container {
-  height: 40vh;
-  width: 57vw;
+#skills-radar {
+  max-height: 80vh;
 }
 body {
     position:relative;
@@ -177,10 +176,6 @@ footer {
 	text-align: center;
 }
 @media(max-width: 992px) {
-  .chart-container {
-    height: 800px;
-    width: 800px;
-  }
   #logo {
     position: static;
   }
@@ -201,10 +196,6 @@ footer {
 	}
 }
 @media(max-width: 768px) {
-  .chart-container {
-    height: 500px;
-    width: 500px;
-  }
 	#me{
 		width: 15rem;
 	}
@@ -225,10 +216,6 @@ footer {
 	}
 }
 @media(max-width: 576px) {
-  .chart-container {
-    height: 400px;
-    width: 400px;
-  }
 	#me{
 		width: 10rem;
 	}

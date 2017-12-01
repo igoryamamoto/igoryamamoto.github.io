@@ -83,12 +83,12 @@ $(document).ready(function() {
     data: {
         labels: ['Web Development', 'Engineering', 'Languages', 'Multidisciplinary', 'Data Science'],
         datasets: [{
-            label: "Skills",
+            label: "Fields",
             backgroundColor: "rgba(12, 156, 92, 0.45)",
             borderColor: "rgba(12, 156, 92, 0.95)",
-            radius: 6,
-            pointRadius: 6,
-            pointBorderWidth: 3,
+            //radius: 6,
+            //pointRadius: 6,
+            //pointBorderWidth: 3,
             pointBackgroundColor: "rgba(12, 156, 92, 0.95)",
             pointBorderColor: [pointBC, pointBC, pointBC, pointBC, pointBC],
             pointHoverRadius: 10,
@@ -96,6 +96,12 @@ $(document).ready(function() {
         }]
     },
     options: {
+      title: {
+        display: true,
+        text: "Fields of Knowledge",
+        position: "top",
+        fontSize: 20
+      },
       scale: {
         ticks: {
           display: false,
@@ -110,9 +116,55 @@ $(document).ready(function() {
       },
       legend: {
         position: 'none'
-      }
+      },
+      tooltips: {
+         enabled: false
+       }
     }
   });
+
+  var ctx2 = document.getElementById('skills-bar').getContext('2d');
+  var pointBC = "rgba(12, 156, 92, 0.95)"
+  var myBarChart = new Chart(ctx2, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Python', 'SQL', 'Git', 'HTML5/CSS3/JS', 'Angular', 'React.js', 'Matlab', 'LabVIEW', 'C', 'English', 'Portuguese'],
+        datasets: [{
+            label: "Tools",
+            backgroundColor: ["#0098CA", "#0098CA", "#ff5656","#ff5656","#ff5656", "#ff5656", "#ffd668", "#ffd668", "#ffd668", "#009B3A", "#009B3A"],
+            data: [95, 72, 89, 88, 75, 77, 76, 69, 65, 82, 99]
+        }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: "Tools",
+        position: "top",
+        fontSize: 20
+      },
+      scales: {
+        xAxes: [{
+          ticks: {
+            display: false,
+            beginAtZero: true,
+            min: 0,
+            max: 100,
+            stepSize: 20
+          }
+        }],
+        yAxes: [{
+        }]
+      },
+      legend: {
+        position: 'none'
+      },
+      tooltips: {
+         enabled: false
+       }
+    }
+
+  });
+
   var secColor = '#f5f5f7';
 // FullPage stuff
 	$('#fullpage').fullpage({
