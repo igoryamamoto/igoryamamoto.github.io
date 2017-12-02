@@ -196,7 +196,7 @@ footer {
 	text-align: center;
 }
 .work-in-progress{
-  width: 700px;
+  width: 725px;
 }
 @media(max-width: 992px) {
   #logo {
@@ -243,7 +243,7 @@ footer {
 		width: 10rem;
 	}
 	.work-in-progress{
-		width: 400px;
+		width: 300px;
 	}
   .active.nav-item > a:before {
     width: 30%;
