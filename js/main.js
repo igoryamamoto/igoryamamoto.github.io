@@ -83,7 +83,7 @@ $(document).ready(function() {
     data: {
         labels: ['Web Development', 'Engineering', 'Languages', 'Multidisciplinary', 'Data Science'],
         datasets: [{
-            label: "Fields",
+            label: "Knowledge",
             backgroundColor: "rgba(12, 156, 92, 0.45)",
             borderColor: "rgba(12, 156, 92, 0.95)",
             //radius: 6,
@@ -92,13 +92,13 @@ $(document).ready(function() {
             pointBackgroundColor: "rgba(12, 156, 92, 0.95)",
             pointBorderColor: [pointBC, pointBC, pointBC, pointBC, pointBC],
             pointHoverRadius: 10,
-            data: [85, 75, 70, 75, 80]
+            data: [89, 75, 67, 80, 85]
         }]
     },
     options: {
       title: {
         display: true,
-        text: "Fields of Knowledge",
+        text: "Knowledge Distribution",
         position: "top",
         fontSize: 20
       },
