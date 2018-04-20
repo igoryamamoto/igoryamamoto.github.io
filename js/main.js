@@ -81,7 +81,7 @@ $(document).ready(function() {
   var myRadarChart = new Chart(ctx, {
     type: 'radar',
     data: {
-        labels: ['Web Development', 'Engineering', 'Languages', 'Multidisciplinary', 'Data Science'],
+        labels: ['Web Development', 'Engineering', 'Languages', 'Mobile', 'Data Science'],
         datasets: [{
             label: "Knowledge",
             backgroundColor: "rgba(12, 156, 92, 0.45)",
@@ -92,7 +92,7 @@ $(document).ready(function() {
             pointBackgroundColor: "rgba(12, 156, 92, 0.95)",
             pointBorderColor: [pointBC, pointBC, pointBC, pointBC, pointBC],
             pointHoverRadius: 10,
-            data: [89, 75, 67, 80, 85]
+            data: [75, 70, 65, 70, 70]
         }]
     },
     options: {
@@ -128,11 +128,11 @@ $(document).ready(function() {
   var myBarChart = new Chart(ctx2, {
     type: 'horizontalBar',
     data: {
-        labels: ['Python', 'SQL', 'Git', 'HTML5/CSS3/JS', 'Angular', 'React.js', 'Matlab', 'LabVIEW', 'C', 'English', 'Portuguese'],
+        labels: ['Python', 'SQL', 'Git', 'HTML5/CSS3/JS', 'Angular', 'React.js', 'Swift', 'Matlab', 'LabVIEW', 'C', 'English', 'Portuguese'],
         datasets: [{
             label: "Tools",
-            backgroundColor: ["#0098CA", "#0098CA", "#ff5656","#ff5656","#ff5656", "#ff5656", "#ffd668", "#ffd668", "#ffd668", "#009B3A", "#009B3A"],
-            data: [95, 72, 89, 88, 75, 77, 76, 69, 65, 82, 99]
+            backgroundColor: ["#0098CA", "#0098CA", "#0098CA","#ff5656","#ff5656", "#ff5656", "#c0c0c0", "#ffd668", "#ffd668", "#ffd668", "#", "#009B3A", "#009B3A"],
+            data: [85, 72, 89, 75, 60, 60, 60, 60, 60, 82, 99]
         }]
     },
     options: {
