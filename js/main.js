@@ -92,7 +92,7 @@ $(document).ready(function() {
             pointBackgroundColor: "rgba(12, 156, 92, 0.95)",
             pointBorderColor: [pointBC, pointBC, pointBC, pointBC, pointBC],
             pointHoverRadius: 10,
-            data: [75, 70, 65, 70, 70]
+            data: [75, 70, 60, 75, 70]
         }]
     },
     options: {
@@ -131,7 +131,7 @@ $(document).ready(function() {
         labels: ['Python', 'SQL', 'Git', 'HTML5/CSS3/JS', 'Angular', 'React.js', 'Swift', 'Matlab', 'LabVIEW', 'C', 'English', 'Portuguese'],
         datasets: [{
             label: "Tools",
-            backgroundColor: ["#0098CA", "#0098CA", "#0098CA","#ff5656","#ff5656", "#ff5656", "#c0c0c0", "#ffd668", "#ffd668", "#ffd668", "#", "#009B3A", "#009B3A"],
+            backgroundColor: ["#0098CA", "#0098CA", "#0098CA", "#ff5656", "#ff5656", "#ff5656", "#c0c0c0", "#ffd668", "#ffd668", "#ffd668", "#009B3A", "#009B3A"],
             data: [85, 72, 89, 75, 60, 60, 60, 60, 60, 82, 99]
         }]
     },
