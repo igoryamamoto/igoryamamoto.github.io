@@ -132,7 +132,7 @@ $(document).ready(function() {
         datasets: [{
             label: "Tools",
             backgroundColor: ["#0098CA", "#0098CA", "#0098CA", "#ff5656", "#ff5656", "#ff5656", "#c0c0c0", "#ffd668", "#ffd668", "#ffd668", "#009B3A", "#009B3A"],
-            data: [85, 72, 89, 75, 60, 60, 60, 60, 60, 82, 99]
+            data: [85, 72, 89, 75, 60, 60, 80, 60, 60, 60, 82, 99]
         }]
     },
     options: {
